@@ -731,8 +731,9 @@ async def shutdown_db_client():
 import uvicorn
 import os
 
+# Esse bloco é o que liga o servidor
 if __name__ == "__main__":
-    # O Render define a porta automaticamente na variável PORT
-    port = int(os.environ.get("PORT", 10000))
-    # É obrigatório usar host="0.0.0.0" para o servidor ficar online
+    # O Render fornece a porta na variável de ambiente PORT
+    port = int(os.environ.get("PORT", 8000))
+    # É obrigatório usar host="0.0.0.0"
     uvicorn.run(app, host="0.0.0.0", port=port)
